@@ -1,0 +1,3 @@
+(function(){
+var script=document.currentScript;var hlsUrl=new URL('hls-dru42stk.js',script.src).href;window.attachMoviePlayer=function(video,src){if(!video||!src)return;if(video.canPlayType('application/vnd.apple.mpegurl')){video.src=src;return}try{var loadHls=new Function('u','return import(u)');loadHls(hlsUrl).then(function(mod){var Hls=mod.H;if(Hls&&Hls.isSupported()){var hls=new Hls({enableWorker:true,lowLatencyMode:true});hls.loadSource(src);hls.attachMedia(video)}else{video.src=src}}).catch(function(){video.src=src})}catch(e){video.src=src}}
+})();
